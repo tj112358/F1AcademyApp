@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		521DE5922E822BFC00A601C0 /* rllZZUcgJpNb.json in Resources */ = {isa = PBXBuildFile; fileRef = 521DE5912E822BFC00A601C0 /* rllZZUcgJpNb.json */; };
+		52D8DF682E747F16006CCD4D /* Formula1-Display-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52D8DF672E747F16006CCD4D /* Formula1-Display-Regular.ttf */; };
+		52D8DF6A2E786552006CCD4D /* Formula1-Display-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52D8DF692E786552006CCD4D /* Formula1-Display-Bold.ttf */; };
+		52D8DF6C2E78658F006CCD4D /* Formula1-Display-Wide.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 52D8DF6B2E78658F006CCD4D /* Formula1-Display-Wide.ttf */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		52D8DF472E747338006CCD4D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -24,14 +31,31 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		521DE5912E822BFC00A601C0 /* rllZZUcgJpNb.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = rllZZUcgJpNb.json; sourceTree = "<group>"; };
 		52D8DF392E747335006CCD4D /* app2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = app2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D8DF462E747338006CCD4D /* app2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D8DF502E747338006CCD4D /* app2UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = app2UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52D8DF672E747F16006CCD4D /* Formula1-Display-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Formula1-Display-Regular.ttf"; sourceTree = "<group>"; };
+		52D8DF692E786552006CCD4D /* Formula1-Display-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Formula1-Display-Bold.ttf"; sourceTree = "<group>"; };
+		52D8DF6B2E78658F006CCD4D /* Formula1-Display-Wide.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Formula1-Display-Wide.ttf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		52D8DF662E747C50006CCD4D /* Exceptions for "app2" folder in "app2" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 52D8DF382E747335006CCD4D /* app2 */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		52D8DF3B2E747335006CCD4D /* app2 */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				52D8DF662E747C50006CCD4D /* Exceptions for "app2" folder in "app2" target */,
+			);
 			path = app2;
 			sourceTree = "<group>";
 		};
@@ -75,6 +99,10 @@
 		52D8DF302E747335006CCD4D = {
 			isa = PBXGroup;
 			children = (
+				521DE5912E822BFC00A601C0 /* rllZZUcgJpNb.json */,
+				52D8DF6B2E78658F006CCD4D /* Formula1-Display-Wide.ttf */,
+				52D8DF692E786552006CCD4D /* Formula1-Display-Bold.ttf */,
+				52D8DF672E747F16006CCD4D /* Formula1-Display-Regular.ttf */,
 				52D8DF3B2E747335006CCD4D /* app2 */,
 				52D8DF492E747338006CCD4D /* app2Tests */,
 				52D8DF532E747338006CCD4D /* app2UITests */,
@@ -212,6 +240,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52D8DF6C2E78658F006CCD4D /* Formula1-Display-Wide.ttf in Resources */,
+				521DE5922E822BFC00A601C0 /* rllZZUcgJpNb.json in Resources */,
+				52D8DF6A2E786552006CCD4D /* Formula1-Display-Bold.ttf in Resources */,
+				52D8DF682E747F16006CCD4D /* Formula1-Display-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,13 +425,15 @@
 		52D8DF5B2E747338006CCD4D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = apleconFANCY;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7K3Y7Y8WR6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = app2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Unoffical F1A";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -421,13 +455,15 @@
 		52D8DF5C2E747338006CCD4D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = apleconFANCY;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 7K3Y7Y8WR6;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = app2/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "Unoffical F1A";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
