@@ -50,9 +50,6 @@ struct StandingsPage: View {
     
     var body: some View {
         NavigationView{
-            ZStack{
-                Color(jet) //i am the background
-                    .edgesIgnoringSafeArea(.all)
                 ScrollView{
                     VStack{
                         Text("DRIVERS' STANDINGS")
@@ -102,60 +99,83 @@ struct StandingsPage: View {
             }
         }
     }
-}
+
 
 struct DriverView: View {
     
     let driver: Driver
     
     var body: some View {
-        ZStack{
-            Color(jet) //i am the background
-                .edgesIgnoringSafeArea(.all)
+        NavigationView {
             ScrollView {
-                VStack{
-                    ZStack{
-                        Image("\(driver.lastName)")
-                            .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .frame(height: 275)
+                    VStack {
+                        ZStack{
+                            Image("\(driver.lastName)")
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: 275)
                             //.frame(maxWidth: .infinity)
-                            .edgesIgnoringSafeArea(.top)
-                        VStack{
-                            Spacer()
                             VStack{
-                                Text("\(driver.firstName)")
-                                    .foregroundColor(Color(jet))
-                                    .font(.custom("Formula1-Display-Regular", size: 20))
-                                Text("\(driver.lastName)" .uppercased())
-                                    .font(.custom("Formula1-Display-Regular", size: 30))
-                                    .fontWeight(.bold)
-                                    .foregroundColor(Color(jet))
-                                    .frame(maxWidth: .infinity)
-                                HStack {
-                                    /*Image("arch")
-                                        .resizable()
-                                        .aspectRatio(contentMode: .fill)
-                                        .frame(width: 30, height: 30)
-                                        .padding(.trailing, 5)*/
-                                    Text("\(driver.nation)")
-                                        .font(.custom("Formula1-Display-Regular", size: 40))
-                                        .foregroundColor(Color(snow))
-                                    Text("\(driver.number)")
-                                        .font(.custom("Formula1-Display-Regular", size: 30))
+                                Spacer()
+                                VStack{
+                                    Text("\(driver.firstName)")
                                         .foregroundColor(Color(jet))
+                                        .font(.custom("Formula1-Display-Regular", size: 20))
+                                    Text("\(driver.lastName)" .uppercased())
+                                        .font(.custom("Formula1-Display-Regular", size: 30))
+                                        .fontWeight(.bold)
+                                        .foregroundColor(Color(jet))
+                                        .frame(maxWidth: .infinity)
+                                    HStack {
+                                        Text("\(driver.nation)")
+                                            .font(.custom("Formula1-Display-Regular", size: 40))
+                                            .foregroundColor(Color(snow))
+                                        Text("\(driver.number)")
+                                            .font(.custom("Formula1-Display-Regular", size: 30))
+                                            .foregroundColor(Color(jet))
+                                    }
                                 }
+                                .padding()
+                                .padding(.top, 120)
+                                .background(
+                                    LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 41/255, green: 42/255, blue: 39/255, alpha: 0)), Color(UIColor(red: 41/255, green: 42/255, blue: 39/255, alpha: 0.70))]), startPoint: .top, endPoint: .bottom)
+                                )
                             }
-                            .padding()
-                            .padding(.top, 120)
-                            .background(
-                                LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 41/255, green: 42/255, blue: 39/255, alpha: 0)), Color(UIColor(red: 41/255, green: 42/255, blue: 39/255, alpha: 0.70))]), startPoint: .top, endPoint: .bottom)
-                            )
                         }
+                        HStack {
+                            Text("Statistics")
+                            Text("Biography")
+                                .padding(.leading, 15)
+                                .padding(.trailing, 15)
+                            Text("Results")
+                        }
+                        .font(.custom("Formula1-Display-Regular", size: 16))
+                        .foregroundColor(Color(snow))
+                        .padding(10)
+                        .frame(maxWidth: .infinity)
+                        .background(
+                            Color(olive)
+                        )
+
                     }
+                    Statistics()
                 }
             }
         }
+    }
+
+struct Statistics: View {
+    var body: some View {
+        VStack {
+            Text("2025 SEASON")
+                .font(.custom("Formula1-Display-Bold", size: 20))
+                .padding(10)
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+                .background(
+                    Color(.red)
+                )
+        }
+        .padding(10)
     }
 }
 

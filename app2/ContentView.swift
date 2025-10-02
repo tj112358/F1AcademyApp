@@ -7,8 +7,11 @@
 
 import SwiftUI
 
+//This is white
 var jet = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
+//This is white smoke
 var olive = UIColor(hue: 0/360, saturation: 2/100, brightness: 95/100, alpha: 1)
+//This is balsalm black
 var snow = UIColor(red: 21/255, green: 21/255, blue: 32/255, alpha: 1)
 var pink = UIColor(red: 207/255, green: 0/255, blue: 126/255, alpha: 1)
 var blue = UIColor(red: 83/255, green: 199/255, blue: 231/255, alpha: 1)
