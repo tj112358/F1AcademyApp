@@ -110,11 +110,12 @@ struct DriverView: View {
             ScrollView {
                     VStack {
                         ZStack{
-                            Image("\(driver.lastName)")
-                                .resizable()
-                                .aspectRatio(contentMode: .fill)
-                                .frame(height: 275)
-                            //.frame(maxWidth: .infinity)
+                            GeometryReader {proxy in
+                                Image("\(driver.lastName)")
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: proxy.size.width, height: 275) //275
+                            }
                             VStack{
                                 Spacer()
                                 VStack{
@@ -135,8 +136,7 @@ struct DriverView: View {
                                             .foregroundColor(Color(jet))
                                     }
                                 }
-                                .padding()
-                                .padding(.top, 120)
+                                .padding(.top, 163)
                                 .background(
                                     LinearGradient(gradient: Gradient(colors: [Color(UIColor(red: 41/255, green: 42/255, blue: 39/255, alpha: 0)), Color(UIColor(red: 41/255, green: 42/255, blue: 39/255, alpha: 0.70))]), startPoint: .top, endPoint: .bottom)
                                 )
@@ -156,9 +156,9 @@ struct DriverView: View {
                         .background(
                             Color(olive)
                         )
-
+                        Statistics()
                     }
-                    Statistics()
+                    
                 }
             }
         }
@@ -171,11 +171,171 @@ struct Statistics: View {
                 .font(.custom("Formula1-Display-Bold", size: 20))
                 .padding(10)
                 .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
-                .background(
-                    Color(.red)
-                )
+            Grid(alignment: .leading){
+                GridRow {
+                    Text("Season Position")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("Season Points")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                GridRow {
+                    Text("00")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .font(.custom("Formula1-Display-Bold", size: 20))
+                GridRow {
+                    Text("Team")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("Supported By")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                GridRow {
+                    Text("Prema Racing")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                        .padding(.bottom, 5)
+                    Text("Mercedes")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .font(.custom("Formula1-Display-Bold", size: 20))
+                Divider()
+                GridRow {
+                    Text("Podiums")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("Poles")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                GridRow {
+                    Text("00")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .font(.custom("Formula1-Display-Bold", size: 20))
+                GridRow {
+                    Text("R1 Wins")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("R2 Wins")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                GridRow {
+                    Text("00")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .font(.custom("Formula1-Display-Bold", size: 20))
+                GridRow {
+                    Text("Top 10s")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("DNFs")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                GridRow {
+                    Text("00")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                        .padding(.bottom, 5)
+                    Text("00")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+                .font(.custom("Formula1-Display-Bold", size: 20))
+                Divider()
+            }
+            
+            
+            Text("CAREER STATS")
+                .font(.custom("Formula1-Display-Bold", size: 20))
+                .padding(10)
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .leading)
+            Grid(alignment: .leading){
+                GridRow {
+                    Text("Career Points")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                    Text("00")
+                        .font(.custom("Formula1-Display-Bold", size: 20))
+                }
+                GridRow {
+                    Text("Highest Race Finish")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00 (x00)")
+                        .font(.custom("Formula1-Display-Bold", size: 20))
+                        .padding(.trailing, 40)
+
+                }
+                GridRow {
+                    Text("Podiums")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .font(.custom("Formula1-Display-Bold", size: 20))
+                }
+                GridRow {
+                    Text("Poles")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .font(.custom("Formula1-Display-Bold", size: 20))
+                }
+                GridRow {
+                    Text("DNFs")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .font(.custom("Formula1-Display-Bold", size: 20))
+                }
+                GridRow {
+                    Text("Races Entered")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .font(.custom("Formula1-Display-Bold", size: 20))
+                }
+                GridRow {
+                    Text("Seasons Entered")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .font(.custom("Formula1-Display-Bold", size: 20))
+                }
+                GridRow {
+                    Text("Wildcard Entries")
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .padding(.leading, 10)
+                        .padding(.top, 5)
+                    Text("00")
+                        .font(.custom("Formula1-Display-Bold", size: 20))
+                }
+            }
         }
-        .padding(10)
     }
 }
 
