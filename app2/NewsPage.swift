@@ -252,12 +252,13 @@ struct NewsPage: View {
                 VStack{
                     HStack{ //i am the top bar w race countdown
                         VStack{
-                            Text("Jeddah")
+                            Text("nextrace")
                                 .font(.custom("Formula1-Display-Regular", size: 30))
+                                .frame(maxWidth: .infinity, alignment: .leading)
                             Text("SEP 19-20")
                                 .font(.custom("Formula1-Display-Regular", size: 12))
+                                .frame(maxWidth: .infinity, alignment: .leading)
                         }
-                        .frame(alignment: .leading)
                         Spacer()
                         Text("00:00:00")
                             .font(.custom("Formula1-Display-Regular", size: 24))
