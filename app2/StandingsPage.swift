@@ -187,12 +187,12 @@ struct DriverLView: View {
                         
                         //Bar(driver: driver)
                         
-                        Statistics(driverL: driverL)
+                        /*Statistics(driverL: driverL)
                             .id("Stats")
                         Biography()
                             .id("Bio")
                         Results()
-                            .id("Res")
+                            .id("Res")*/
                    
                     }
                 }
@@ -231,7 +231,7 @@ struct Bar: View {
     }
 }
 
-struct Statistics: View {
+/*struct Statistics: View {
     
     let driverL: DriverL
 
@@ -485,7 +485,7 @@ struct Results: View {
     var body: some View {
         Text("hello, world!")
     }
-}
+}*/
 
 #Preview {
     StandingsPage()
