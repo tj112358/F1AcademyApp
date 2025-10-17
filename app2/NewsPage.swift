@@ -39,21 +39,24 @@ struct headline2: View {
                     Image(uiImage: img.load())
                         .resizable()
                         .aspectRatio(contentMode: .fill)
-                        .frame(width: 90, height: 80)
+                        .frame(width: 100, height: 90)
                         .clipShape(UnevenRoundedRectangle(cornerRadii: .init(topLeading: 15, bottomLeading: 15)))
                     VStack(alignment: .leading){
                         Text(title .uppercased())
                             .foregroundColor(Color(snow))
-                            .font(.system(size: 14))
+                            .font(.system(size: 12))
                         Text(headline)
-                            .font(.custom("Formula1-Display-Bold", size: 16))
+                            .font(.custom("Formula1-Display-Bold", size: 14))
                             .fontWeight(.bold)
                             .foregroundColor(Color(snow))
-                            .lineLimit(2)
+                            .lineLimit(3)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .multilineTextAlignment(.leading)
                     }
-                    .padding(10)
+                    .padding(.leading, 5)
+                    .padding(.trailing, 10)
+                    .padding(.top, 15)
+                    .padding(.bottom, 15)
                 }
             }
             .background(Rectangle()
@@ -77,6 +80,12 @@ struct Headliner: View {
     var body: some View{
         NavigationLink(destination: WebView(url: URL(string: address))) {
             ZStack{
+                /*GeometryReader {proxy in
+                    Image(uiImage: img.load())
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: proxy.size.width, height: 275)
+                }*/
                 Image(uiImage: img.load())
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -89,10 +98,10 @@ struct Headliner: View {
                             .foregroundColor(Color(jet))
                             .font(.custom("ProximaNova-Medium", size: 15))
                         Text(headline)
-                            .font(.custom("Formula1-Display-Bold", size: 24))
+                            .font(.custom("Formula1-Display-Bold", size: 22))
                             .fontWeight(.bold)
                             .foregroundColor(Color(jet))
-                            .lineLimit(2)
+                            .lineLimit(3)
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .multilineTextAlignment(.leading)
                     }

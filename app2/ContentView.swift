@@ -19,6 +19,37 @@ var purple = UIColor(red: 145/255, green: 100/255, blue: 179/255, alpha: 1)
 //var snow = UIColor(hue: 340/360, saturation: 2/100, brightness: 97/100, alpha: 1)
 
 struct ContentView: View {
+    
+    @State var isActive: Bool = false
+    
+    var body: some View {
+        ZStack {
+            if self.isActive {
+                SplashView()
+            } else {
+                //Rectangle()
+                   // .background(Color.white)
+                Image("loadingAcademy")
+                    .resizable()
+                    .frame(maxHeight: .infinity)
+                    .ignoresSafeArea(edges: .top)
+                    .ignoresSafeArea(edges: .bottom)
+                    .aspectRatio(contentMode: .fill)
+            }
+        }
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now()) {
+                withAnimation {
+                    self.isActive = true
+                }
+            }
+        }
+    }
+        
+}
+
+
+struct SplashView: View {
     var body: some View {
         TabView{
             NewsPage()
