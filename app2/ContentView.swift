@@ -7,6 +7,23 @@
 
 import SwiftUI
 
+extension String {
+    func load() -> UIImage {
+        
+        do {
+            guard let url = URL(string: self) else {
+                return UIImage()
+            }
+            
+            let data: Data = try Data(contentsOf: url)
+            return UIImage(data: data) ?? UIImage()
+        } catch {
+            
+        }
+        return UIImage()
+    }
+}
+
 //This is white
 var jet = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 1)
 //This is white smoke
@@ -16,6 +33,10 @@ var snow = UIColor(red: 21/255, green: 21/255, blue: 32/255, alpha: 1)
 var pink = UIColor(red: 207/255, green: 0/255, blue: 126/255, alpha: 1)
 var blue = UIColor(red: 83/255, green: 199/255, blue: 231/255, alpha: 1)
 var purple = UIColor(red: 145/255, green: 100/255, blue: 179/255, alpha: 1)
+var race = UIColor(hue: 0/360, saturation: 0/100, brightness: 88/100, alpha: 1)
+var pinky = UIColor(hue: 323/360, saturation: 45/100, brightness: 91/100, alpha: 1)
+
+
 //var snow = UIColor(hue: 340/360, saturation: 2/100, brightness: 97/100, alpha: 1)
 
 struct ContentView: View {

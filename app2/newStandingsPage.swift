@@ -38,13 +38,7 @@ struct NewStandingsPage: View {
         Driver(personValue: 20, name: ""),
         Driver(personValue: 21, name: ""),
         Driver(personValue: 22, name: ""),
-        Driver(personValue: 23, name: ""),
-        Driver(personValue: 24, name: ""),
-        Driver(personValue: 25, name: ""),
-        Driver(personValue: 26, name: ""),
-        Driver(personValue: 27, name: ""),
-        Driver(personValue: 28, name: ""),
-        Driver(personValue: 29, name: "")
+        Driver(personValue: 23, name: "")
     ]
     
     var body: some View {
