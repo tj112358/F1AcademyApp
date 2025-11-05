@@ -145,6 +145,9 @@ struct NewsPage: View {
     ]
     
     var body: some View {
+        
+        
+        
         let url = URL (string: "https://www.f1academy.com/Latest")!
         let html = try? String(contentsOf: url, encoding: .utf8)
         let document = try! SwiftSoup.parse(html ?? "")
