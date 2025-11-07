@@ -47,7 +47,7 @@ struct headline2: View {
                 .frame(minWidth: 0, maxWidth: .infinity)
                 .cornerRadius(15)
                 .foregroundColor(Color(olive))
-                //.shadow(radius: 5)
+                        //.shadow(radius: 5)
             )
             .padding(.top, 5)
             .padding(.horizontal)
@@ -65,11 +65,11 @@ struct Headliner: View {
         NavigationLink(destination: WebView(url: URL(string: address))) {
             ZStack{
                 /*GeometryReader {proxy in
-                    Image(uiImage: img.load())
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: proxy.size.width, height: 275)
-                }*/
+                 Image(uiImage: img.load())
+                 .resizable()
+                 .aspectRatio(contentMode: .fill)
+                 .frame(width: proxy.size.width, height: 275)
+                 }*/
                 Image(uiImage: img.load())
                     .resizable()
                     .aspectRatio(contentMode: .fill)
@@ -145,8 +145,6 @@ struct NewsPage: View {
     ]
     
     var body: some View {
-        
-        
         
         let url = URL (string: "https://www.f1academy.com/Latest")!
         let html = try? String(contentsOf: url, encoding: .utf8)

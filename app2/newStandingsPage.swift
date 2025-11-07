@@ -54,7 +54,7 @@ struct NewStandingsPage: View {
                         .font(.custom("Formula1-Display-Regular", size: 26))
                         .padding(.bottom, 10)
                         .padding(.top, 10)
-                        
+                    
                     Grid(alignment: .leading, horizontalSpacing: 1, verticalSpacing: 25){
                         GridRow {
                             Text("POS")
@@ -65,32 +65,32 @@ struct NewStandingsPage: View {
                                 .frame(maxWidth: .infinity, alignment: .trailing)
                         }
                         .font(.custom("ProximaNova-Bold", size: 20))
-                    
-                    ForEach(drivers, id: \.id) { driver in
-                        let standing = try! document.select("tbody tr:eq(\(driver.personValue)) .pos")
-                        let pts = try! document.select("tbody tr:eq(\(driver.personValue)) .total-points")
-                        let person = try! document.select("tbody tr:eq(\(driver.personValue)) .visible-desktop-up")
-                        let abrv = try! document.select("tbody tr:eq(\(driver.personValue)) .visible-desktop-down")
                         
-                        NavigationLink (destination: DriverView(driver: driver)){
-                            GridRow {
-                                Text("\(try! standing.text())")
-                                    .padding(.leading, 5)
-                                    .padding(.trailing, 20)
-                                Image("\(try! abrv.text())" + "_headshot")
-                                    .resizable()
-                                    .aspectRatio(contentMode: .fit)
-                                    .frame(width: 40, height: 40)
-                                    .padding(.trailing, 15)
-                                Text("\(try! person.text())")
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                Text("\(try! pts.text())")
-                                    .frame(alignment: .trailing)
-                                Image(systemName: "chevron.right")
-                                    .foregroundStyle(Color(.gray))
+                        ForEach(drivers, id: \.id) { driver in
+                            let standing = try! document.select("tbody tr:eq(\(driver.personValue)) .pos")
+                            let pts = try! document.select("tbody tr:eq(\(driver.personValue)) .total-points")
+                            let person = try! document.select("tbody tr:eq(\(driver.personValue)) .visible-desktop-up")
+                            let abrv = try! document.select("tbody tr:eq(\(driver.personValue)) .visible-desktop-down")
+                            
+                            NavigationLink (destination: DriverView(driver: driver)){
+                                GridRow {
+                                    Text("\(try! standing.text())")
+                                        .padding(.leading, 5)
+                                        .padding(.trailing, 20)
+                                    Image("\(try! abrv.text())" + "_headshot")
+                                        .resizable()
+                                        .aspectRatio(contentMode: .fit)
+                                        .frame(width: 40, height: 40)
+                                        .padding(.trailing, 15)
+                                    Text("\(try! person.text())")
+                                        .frame(maxWidth: .infinity, alignment: .leading)
+                                    Text("\(try! pts.text())")
+                                        .frame(alignment: .trailing)
+                                    Image(systemName: "chevron.right")
+                                        .foregroundStyle(Color(.gray))
+                                }
+                                .font(.custom("Formula1-Display-Regular", size: 14))
                             }
-                            .font(.custom("Formula1-Display-Regular", size: 14))
-                        }
                         }
                     }
                 }
@@ -114,7 +114,7 @@ struct DriverView: View {
         let firstName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .first-name")
         let lastName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) div.last-name span")
         let number = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .driver-carno")
-
+        
         ScrollView {
             LazyVStack (pinnedViews: .sectionHeaders) {
                 VStack{
@@ -189,7 +189,7 @@ struct DriverView: View {
 struct Statistics: View {
     
     let driver: Driver
-
+    
     var body: some View {
         VStack {
             Text("2025 SEASON")
@@ -308,7 +308,7 @@ struct Statistics: View {
                     Text("00 (x00)")
                         .font(.custom("Formula1-Display-Bold", size: 20))
                         .padding(.trailing, 40)
-
+                    
                 }
                 GridRow {
                     Text("Podiums")
@@ -374,8 +374,8 @@ struct Biography: View {
         let document = try! SwiftSoup.parse(html ?? "")
         
         /*let firstName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .first-name")
-        let lastName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) div.last-name span")
-        let number = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .driver-carno")*/
+         let lastName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) div.last-name span")
+         let number = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .driver-carno")*/
         
         Divider()
         Text("BIOGRAPHY")

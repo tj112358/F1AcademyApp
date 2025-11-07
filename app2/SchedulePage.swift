@@ -244,7 +244,7 @@ struct InActiveEvent: View {
             .cornerRadius(15)
             .foregroundStyle(
                 LinearGradient(gradient: Gradient(colors: [Color(olive), Color(pinky)]), startPoint: .leading, endPoint: .trailing)
-                )
+            )
         )
         .padding(.leading)
         .padding(.trailing)

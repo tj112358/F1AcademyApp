@@ -49,7 +49,7 @@ struct ContentView: View {
                 SplashView()
             } else {
                 //Rectangle()
-                   // .background(Color.white)
+                // .background(Color.white)
                 Image("loadingAcademy")
                     .resizable()
                     .frame(maxHeight: .infinity)
@@ -66,7 +66,6 @@ struct ContentView: View {
             }
         }
     }
-        
 }
 
 
@@ -95,22 +94,22 @@ struct SplashView: View {
             UITabBar.appearance().backgroundColor = .white
         }
         /*.onAppear(perform: {
-            UITabBar.appearance().unselectedItemTintColor = .white
-            UITabBar.appearance().backgroundColor = .black
-            UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(.green)]
-            UITabBar.appearance().standardAppearance = UITabBarAppearance()
-            //UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
-            UITabBar.appearance().barTintColor = UIColor(.black)
-        })*/
+         UITabBar.appearance().unselectedItemTintColor = .white
+         UITabBar.appearance().backgroundColor = .black
+         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor(.green)]
+         UITabBar.appearance().standardAppearance = UITabBarAppearance()
+         //UITabBar.appearance().scrollEdgeAppearance = UITabBarAppearance()
+         UITabBar.appearance().barTintColor = UIColor(.black)
+         })*/
         
         /*.onAppear {
-            let appearance = UITabBarAppearance()
-                appearance.backgroundColor = UIColor(Color.purple.opacity(0.2))
-                appearance.shadowColor = UIColor(.purple)
-                appearance.backgroundEffect = UIBlurEffect(style: .extraLight)
-                UITabBar.appearance().standardAppearance = appearance
-                UITabBar.appearance().scrollEdgeAppearance = appearance
-        }*/
+         let appearance = UITabBarAppearance()
+         appearance.backgroundColor = UIColor(Color.purple.opacity(0.2))
+         appearance.shadowColor = UIColor(.purple)
+         appearance.backgroundEffect = UIBlurEffect(style: .extraLight)
+         UITabBar.appearance().standardAppearance = appearance
+         UITabBar.appearance().scrollEdgeAppearance = appearance
+         }*/
     }
 }
 
