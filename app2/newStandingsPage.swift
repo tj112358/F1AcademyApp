@@ -13,6 +13,7 @@ struct Driver: Identifiable {
     let id = UUID()
 }
 
+//TODO: turn into dictionary
 struct NewStandingsPage: View {
     private let drivers = [
         Driver(personValue: 0, name: ""),
@@ -40,6 +41,8 @@ struct NewStandingsPage: View {
         Driver(personValue: 22, name: ""),
         Driver(personValue: 23, name: "")
     ]
+    
+    //TODO: async loading, load only needed when race ends
     
     var body: some View {
         let url = URL (string: "https://www.f1academy.com/Racing-Series/Standings/Driver")!
@@ -77,6 +80,7 @@ struct NewStandingsPage: View {
                                     Text("\(try! standing.text())")
                                         .padding(.leading, 5)
                                         .padding(.trailing, 20)
+                                    //TODO: scrape this image??
                                     Image("\(try! abrv.text())" + "_headshot")
                                         .resizable()
                                         .aspectRatio(contentMode: .fit)
@@ -102,6 +106,8 @@ struct NewStandingsPage: View {
         }
     }
 }
+
+//TODO: must match standingsPageEvicerated to make the pages match the driver
 
 struct DriverView: View {
     let driver: Driver
@@ -369,13 +375,13 @@ struct Biography: View {
     let driver: Driver
     
     var body: some View {
-        let url = URL (string: "https://www.f1academy.com/Racing-Series/Drivers")!
-        let html = try? String(contentsOf: url, encoding: .utf8)
-        let document = try! SwiftSoup.parse(html ?? "")
-        
-        /*let firstName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .first-name")
-         let lastName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) div.last-name span")
-         let number = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .driver-carno")*/
+//        let url = URL (string: "https://www.f1academy.com/Racing-Series/Drivers")!
+//        let html = try? String(contentsOf: url, encoding: .utf8)
+//        let document = try! SwiftSoup.parse(html ?? "")
+//        
+//        let firstName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .first-name")
+//         let lastName = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) div.last-name span")
+//         let number = try! document.select("div.row div.teams-driver-item:eq(\(driver.personValue)) .driver-carno")
         
         Divider()
         Text("BIOGRAPHY")

@@ -24,6 +24,7 @@ struct SchedulePage: View {
         Race(raceValue: 21)
     ]
     
+    //TODO: asynch loading of this, only needed after a race completes
     var body: some View {
         ScrollView {
             ForEach(race, id: \.id) { race in
@@ -44,7 +45,9 @@ struct SchedulePage: View {
         }
     }
 }
-
+//TODO: make the current race be the activeEvent card
+//TODO: have the past races have their standings update
+//TODO: scroll to the active event
 struct ActiveEvent: View {
     var roundNumber: String
     var date: String

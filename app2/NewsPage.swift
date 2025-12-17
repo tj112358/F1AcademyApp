@@ -9,7 +9,9 @@ import SwiftUI
 import WebKit
 import SwiftSoup
 
+//TODO: add instagram moments style on homepage
 
+//TODO: asynch loading of news page
 
 struct headline2: View {
     var headline: String
@@ -63,6 +65,7 @@ struct Headliner: View {
     var address: String
     
     var body: some View{
+        //TODO: load pages and text in app rather than webkit view?
         NavigationLink(destination: WebView(url: URL(string: address))) {
             ZStack{
                 /*GeometryReader {proxy in
@@ -166,7 +169,8 @@ struct NewsPage: View {
                                 .frame(maxWidth: .infinity, alignment: .leading)
                         }
                         Spacer()
-                        Text("00:00:00")
+                        //TODO: proper countdown
+                        Text(Date().addingTimeInterval(600), style: .relative)
                             .font(.custom("Formula1-Display-Regular", size: 24))
                     }
                     .padding(10)
